@@ -1,0 +1,185 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import "mixins";
+
+$color1: #05b1b1;
+$color2: #52339a;
+$bgPattern: "../img/pattern.png";
+
+%_center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%_circle{
+    border-radius: 50%;
+}
+
+//header
+section{
+    padding: 100px 0;
+}
+
+header{
+    padding: 200px 0;
+}
+
+header, footer{
+    background: url($bgPattern), $color1;
+    background: url($bgPattern), linear-gradient(90deg, $color1 0%, $color2 100%);
+    background-size: contain;
+}
+
+.itd_play{
+    background-color: $color1;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    @extend %_center;
+    cursor: pointer;
+    margin: 30px auto;
+    transition: all 0.2s ease;
+
+    &:hover{
+        background-color: $color2;
+    }
+}
+
+.itd_triangle{
+    margin-right: -3px;
+    width: 0;
+    height: 0;
+    border-width: 10px 0 10px 20px;
+    border-style: solid;
+    border-color: transparent transparent transparent $white;
+}
+
+.btn-itd{
+    display: block;
+    max-width: 200px;
+    margin: 0 auto;
+    padding: 8px 30px;
+    color: $white;
+    background-color: $color2;
+
+    &:hover{
+        color: $white;
+        background-color: $color1;
+    }
+}
+
+.embed-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.embed-container embed,
+.embed-container iframe,
+.embed-container object {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+//section1
+.about, .shedule, .author, .buy{
+    background: #eee;
+
+    i{
+        font-size: 25px;
+        color: $color2;
+    }
+}
+
+.itd_circle{
+    margin: 0 auto 15px;
+    width: 70px;
+    height: 70px;
+    @include border($color2);
+    @extend %_circle;
+    @extend %_center;
+}
+
+.line{
+    width: 100px;
+    height: 3px;
+    background: $color1;
+    margin: 15px auto 30px;
+}
+
+//section2
+.forwhom h5{
+    padding: 50px;
+    @include border($color1);
+}
+
+//section3
+.accordion-button{
+    &:not(.collapsed){
+        color: $white;
+        background: $color2;
+        box-shadow: none;
+    }
+
+    &:not(.collapsed)::after{
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    }
+    
+}
+
+.accordion{
+    --bs-accordion-btn-focus-box-shadow: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+//section4
+.learning h5{
+    padding: 25px;
+    @include border($color1);
+}
+
+//section5
+.author{
+    padding-bottom: 0px;
+
+    img{
+        max-width: 260px;
+    }
+}
+
+//section6
+.itd_review-img{
+    @include border($color1);
+}
+
+.review .line{
+    background: $color2;
+}
+
+footer{
+    padding: 30px 0;
+}
+
+//colors
+.color1{
+    color: $color1;
+}
+
+.color2{
+    color: $color2;
+}
+
+.bg1{
+    background-color: $color1;
+}
+
+.bg2{
+    background-color: $color2;
+}
+
+//footer
